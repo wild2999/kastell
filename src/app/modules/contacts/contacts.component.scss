@@ -1,0 +1,41 @@
+.contacts {
+
+  padding: 12rem 0;
+  li {
+
+    display: flex;
+    margin-bottom: 4rem;
+    &:nth-of-type(odd) {
+      & > div {
+
+        &:first-of-type {
+
+          margin-right: 2rem;
+        }
+      }
+    }
+    &:nth-of-type(even) {
+      flex-direction: row-reverse;
+      text-align: right;
+      & > div {
+
+        &:first-of-type {
+
+          margin-left: 2rem;
+        }
+      }
+    }
+    & > div {
+
+
+      &:first-of-type {
+
+        flex: 1 1 7000px;
+      }
+      img {
+
+        width: 100%;
+      }
+    }
+  }
+}

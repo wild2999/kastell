@@ -1,0 +1,41 @@
+.project {
+
+  padding: 12rem 0;
+  &__slider {
+
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    img {
+
+      width: 100%;
+    }
+    button {
+
+      display: block;
+      position: absolute;
+      top: 50%;
+      color: #fff;
+      background: transparent;
+      border: none;
+      font-size: 2em;
+      cursor: pointer;
+      outline: none;
+      &.leftRs {
+
+        left: 30px;
+      }
+      &.rightRs {
+
+        right: 30px;
+      }
+    }
+  }
+  &__description {
+
+    &-title {
+
+      padding-top: 2rem;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+agm-map {
+
+  height: 400px;
+}
+
+.about {
+
+  padding: 12rem 0;
+  ul {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    li {
+
+      width: 30%;
+      text-align: center;
+      cursor: pointer;
+      outline: none;
+      &:hover {
+
+        & > img {
+
+          transform: scale(.97);
+        }
+      }
+      a {
+
+        background: #313131;
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        padding: 0.5rem 2rem;
+        display: inline-block;
+        margin-top: 1rem;
+        cursor: pointer;
+      }
+      img {
+
+        width: 100%;
+        object-fit: contain;
+        transition: all .4s ease-in-out;
+      }
+    }
+  }
+
+  .projects {
+
+    padding-bottom: 5rem;
+  }
+}

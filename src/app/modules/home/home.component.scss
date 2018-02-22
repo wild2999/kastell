@@ -1,0 +1,62 @@
+@import "../../sass/mixins";
+@import "../../sass/varialbes";
+
+.slider {
+
+  position: relative;
+  ngx-item {
+
+    position: relative;
+  }
+  button {
+
+    position: absolute;
+    top: 50%;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 2em;
+    cursor: pointer;
+    outline: none;
+    &.leftRs {
+
+      left: 100px;
+    }
+    &.rightRs {
+
+      right: 100px;
+    }
+  }
+  .slider__title {
+
+    position: absolute;
+    text-shadow: 3px 3px 1px $black;
+    color: #fff;
+    font-size: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    & > h1 {
+
+      text-align: center;
+      width: 70%;
+    }
+  }
+  img {
+
+    width: 100vw;
+    height: 100vh;
+    margin-bottom: -3px;
+  }
+}
+
+.slogan {
+
+  text-align: center;
+  font-size: 5em;
+  padding: 7rem 0;
+}

@@ -1,0 +1,13 @@
+@mixin link {
+
+  text-decoration: none;
+}
+
+@mixin button {
+
+  font-size: 1.6em;
+  background: #bdbdbd;
+  border-radius: 5px;
+  color: #fff;
+  padding: .5rem 4rem;
+}

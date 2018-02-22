@@ -1,0 +1,17 @@
+<div class="about">
+  <div class="projects container">
+    <h2 class="title">Projects</h2>
+    <ul>
+      <li *ngFor="let project of projects" [routerLink]="['/project', project.id]">
+        <img [src]="project.src" [alt]="project.label" />
+        <a>{{project.label}}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="google-map">
+    <h2 class="title">Our Location</h2>
+    <agm-map [latitude]="lat" [longitude]="lng">
+      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    </agm-map>
+  </div>
+</div>

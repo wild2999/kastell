@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./app/sass/reset";
+@import "./app/sass/varialbes";
+@import "./app/sass/mixins";
+
+body {
+
+  font-family: AvenirNext-UltraLight, sans-serif;
+}
+
+.container {
+
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.wrapper {
+
+  min-height: calc(100vh - 115px);
+}
+
+h2.title {
+
+  text-align: center;
+  font-size: 3.5em;
+  padding-bottom: 5rem;
+}
+
+h3 {
+
+  padding-bottom: 1rem;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+p, ul.list-of-text {
+
+  line-height: 1.5em;
+}

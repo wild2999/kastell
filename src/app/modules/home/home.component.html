@@ -1,0 +1,26 @@
+<div class="home">
+  <div class="slider">
+    <ngx-carousel
+      [inputs]="carouselOne"
+    >
+      <ngx-item NgxCarouselItem *ngFor="let slide of slides">
+        <div class="slider__title">
+          <h1>{{slide.title}}</h1>
+        </div>
+        <img [src]="slide.src" alt="">
+      </ngx-item>
+      <button NgxCarouselPrev class='leftRs'><i class="fas fa-angle-double-left"></i></button>
+      <button NgxCarouselNext class='rightRs'><i class="fas fa-angle-double-right"></i></button>
+    </ngx-carousel>
+  </div>
+  <div class="projects">
+    <ul>
+      <li *ngFor="let project of projects">
+        <a href="">
+          <img [src]="project.src" alt="">
+          <button class="custom-btn">{{project.label}}</button>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
