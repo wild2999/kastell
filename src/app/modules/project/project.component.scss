@@ -1,6 +1,14 @@
+@import "../../sass/mixins";
+@import "../../sass/varialbes";
+
 .project {
 
   padding: 12rem 0;
+  @include tablet {
+
+    padding: 7rem 5px;
+    box-sizing: border-box;
+  }
   &__slider {
 
     width: 100%;
@@ -9,6 +17,15 @@
     img {
 
       width: 100%;
+      //height: 535px;
+      //@include tablet {
+      //
+      //  height: 400px;
+      //}
+      //@include mobile {
+      //
+      //  height: 230px;
+      //}
     }
     button {
 

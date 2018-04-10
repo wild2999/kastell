@@ -16,7 +16,7 @@ const routes: Routes = [
   imports: [
     RouterModule.forChild(routes),
     NgxCarouselModule,
-    SharedModule
+    SharedModule,
   ],
   providers: [],
   exports: [RouterModule]

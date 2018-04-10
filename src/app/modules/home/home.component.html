@@ -1,5 +1,5 @@
 <div class="home">
-  <div class="slider">
+  <div class="slider" *ngIf="!isProgress">
     <ngx-carousel
       [inputs]="carouselOne"
     >
@@ -7,20 +7,11 @@
         <div class="slider__title">
           <h1>{{slide.title}}</h1>
         </div>
-        <img [src]="slide.src" alt="">
+        <div class="slider__image" [ngStyle]="{'background': 'url('+ slide.src+ ') no-repeat center'}"></div>
       </ngx-item>
       <button NgxCarouselPrev class='leftRs'><i class="fas fa-angle-double-left"></i></button>
       <button NgxCarouselNext class='rightRs'><i class="fas fa-angle-double-right"></i></button>
     </ngx-carousel>
   </div>
-  <div class="projects">
-    <ul>
-      <li *ngFor="let project of projects">
-        <a href="">
-          <img [src]="project.src" alt="">
-          <button class="custom-btn">{{project.label}}</button>
-        </a>
-      </li>
-    </ul>
-  </div>
+  <mat-spinner *ngIf="isProgress"></mat-spinner>
 </div>

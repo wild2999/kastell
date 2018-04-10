@@ -1,0 +1,79 @@
+@import "../../sass/mixins";
+@import "../../sass/varialbes";
+
+agm-map {
+
+  height: 400px;
+}
+
+.projects {
+
+  padding: 12rem 0;
+  @include tablet {
+
+    padding: 7rem 0;
+  }
+  ul {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @include tablet {
+
+      flex-direction: column;
+    }
+    li {
+
+      width: 30%;
+      text-align: center;
+      cursor: pointer;
+      outline: none;
+      @include tablet {
+
+        width: 100%;
+        padding: 0 5px;
+        box-sizing: border-box;
+        margin-bottom: 2rem;
+      }
+      &:hover {
+
+        & > img {
+
+          transform: scale(.97);
+        }
+      }
+      a {
+
+        background: #313131;
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        padding: 0.5rem 2rem;
+        display: inline-block;
+        margin-top: 1rem;
+        cursor: pointer;
+        @include tablet {
+
+          width: 100%;
+          box-sizing: border-box;
+          margin-top: 0;
+        }
+      }
+      img {
+
+        width: 100%;
+        object-fit: contain;
+        transition: all .4s ease-in-out;
+      }
+    }
+  }
+
+  .container {
+
+    padding-bottom: 5rem;
+    @include tablet {
+
+      padding-bottom: 0;
+    }
+  }
+}

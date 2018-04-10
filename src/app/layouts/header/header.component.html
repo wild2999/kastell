@@ -6,11 +6,19 @@
                     <img class="logo" [src]="logo" alt="">
                 </a>
             </div>
-            <nav>
+            <nav class="nav">
                 <ul>
                     <li *ngFor="let item of menu"><a href="" [routerLink]="[item.path]">{{item.label}}</a></li>
                 </ul>
             </nav>
+            <div class="nav-tablet">
+                <button [mat-menu-trigger-for]="matMenu" fxHide="false" fxHide.gt-sm>
+                    <mat-icon>menu</mat-icon>
+                </button>
+                <mat-menu #matMenu="matMenu">
+                    <button mat-menu-item *ngFor="let item of menu" [routerLink]="[item.path]">{{item.label}}</button>
+                </mat-menu>
+            </div>
         </div>
     </div>
 </header>

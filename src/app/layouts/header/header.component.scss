@@ -10,15 +10,41 @@
   .logo {
 
     max-width: 230px;
+    @include tablet {
+
+      max-width: 150px;
+    }
   }
   &__wrapper {
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @include tablet {
+
+      padding: 0 1rem;
+    }
+  }
+  .nav-tablet {
+
+    display: none;
+    cursor: pointer;
+    & > button {
+
+      background: transparent;
+      border: none;
+      outline: none;
+    }
+    @include tablet {
+
+      display: block;
+    }
   }
   nav {
 
+    @include tablet {
+      display: none;
+    }
     ul {
 
       display: flex;

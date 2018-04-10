@@ -6,6 +6,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { throwIfAlreadyLoaded } from './module-import-guard';
 import { LayoutsModule } from "../layouts/layouts.module";
 import { RoutingModule } from "./routing.module";
+import { SlideService } from "../shared/services/slide.service";
+import { LocationService } from "../shared/services/location.service";
+import { ProjectService } from "../shared/services/project.service";
+import { AboutService } from "../shared/services/about.service";
 
 @NgModule({
   imports: [
@@ -23,6 +27,10 @@ import { RoutingModule } from "./routing.module";
   ],
   declarations: [ ],
   providers: [
+    SlideService,
+    LocationService,
+    ProjectService,
+    AboutService
   ]
 })
 

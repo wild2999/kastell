@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { About } from "../../shared/models/about";
+import { AboutService } from "../../shared/services/about.service";
 
 @Component({
   selector: 'app-about',
@@ -7,18 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  lat: number = 51.678418;
-  lng: number = 7.809007;
+  public details: About[];
+  public isProgress = true;
 
-  public projects: any[] = [
-    {id: 0, src: '/assets/images/plans.jpg', label: 'First Project'},
-    {id: 1, src: '/assets/images/plans.jpg', label: 'Second Project'},
-    {id: 2, src: '/assets/images/plans.jpg', label: 'Third Project'}
-  ];
+  constructor(
+    private aboutService: AboutService
+  ) {
 
-  constructor() { }
+  }
 
   ngOnInit() {
+    this.aboutService.getAll()
+      .subscribe(details => {
+        this.details = details;
+        this.isProgress = false;
+      });
+  }
+
+  noImage(event) {
+    event.target.src = '/assets/images/unknow-person.jpg';
   }
 
 }

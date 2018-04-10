@@ -1,13 +1,18 @@
+@import "./varialbes";
+
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
 @mixin link {
 
   text-decoration: none;
-}
-
-@mixin button {
-
-  font-size: 1.6em;
-  background: #bdbdbd;
-  border-radius: 5px;
-  color: #fff;
-  padding: .5rem 4rem;
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxCarousel } from 'ngx-carousel';
+import { SlideService } from "../../shared/services/slide.service";
+import { Slide } from "../../shared/models/slide";
 
 @Component({
   selector: 'app-home',
@@ -9,20 +11,18 @@ import { NgxCarousel } from 'ngx-carousel';
 export class HomeComponent implements OnInit {
 
   public carouselOne: NgxCarousel;
-  public slides: any[] = [
-    {
-      src: 'assets/images/house_1.jpg',
-      title: 'DER MENSCH IM MITTELPUNKT'
-    },
-    {
-      src: 'assets/images/house_2.jpg',
-      title: 'IHR SPEZIALIST FÜR HOCHWERTIGES WOHNEN'
-    }
-  ];
+  public slides: Slide[];
+  public isProgress = true;
 
-  constructor() { }
+  constructor(private slideService: SlideService) { }
 
   ngOnInit() {
+    this.slideService.getAll()
+      .subscribe(result => {
+        this.slides = result;
+        this.isProgress = false;
+      });
+
     this.carouselOne = {
       grid: {xs: 1, sm: 1, md: 1, lg: 1, all: 0},
       slide: 1,

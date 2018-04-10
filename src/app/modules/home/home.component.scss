@@ -21,13 +21,21 @@
     &.leftRs {
 
       left: 100px;
+      @include tablet {
+
+        left: 0;
+      }
     }
     &.rightRs {
 
       right: 100px;
+      @include tablet {
+
+        right: 0;
+      }
     }
   }
-  .slider__title {
+  &__title {
 
     position: absolute;
     text-shadow: 3px 3px 1px $black;
@@ -44,13 +52,16 @@
 
       text-align: center;
       width: 70%;
+      @include tablet {
+
+        font-size: .35em;
+      }
     }
   }
-  img {
+  &__image {
 
-    width: 100vw;
     height: 100vh;
-    margin-bottom: -3px;
+    background-size: cover !important;
   }
 }
 
