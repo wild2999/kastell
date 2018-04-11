@@ -29,4 +29,4 @@ app.get('*', (req, res) => res.sendFile(path.resolve('./dist/index.html')));
 
 module.exports = app;
 
-console.log(`Server listens on 3000 port`);
+console.log(`Server listens`);
