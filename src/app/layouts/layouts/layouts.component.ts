@@ -9,9 +9,9 @@ export class LayoutsComponent implements OnInit {
 
   public menu: any = [
     {label: 'Zuhause', path: '/'},
-    {label: 'Projekte', path: '/projects'},
-    {label: 'Über', path: '/about'},
-    {label: 'Kontakte', path: '/contacts'},
+    {label: 'Projekte', path: '/projekte'},
+    {label: 'Über', path: '/über'},
+    {label: 'Kontakte', path: '/kontakte'},
   ];
 
   constructor() { }

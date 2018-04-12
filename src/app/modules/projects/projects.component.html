@@ -3,14 +3,14 @@
     <div class="container">
       <h2 class="title">Projekte</h2>
       <ul>
-        <li *ngFor="let project of projects" [routerLink]="['/project', project._id]">
+        <li *ngFor="let project of projects" [routerLink]="['/projekt', project._id]">
           <img [src]="project.images[0]" [alt]="project.title" />
           <a>{{project.title}}</a>
         </li>
       </ul>
     </div>
     <div class="google-map">
-      <h2 class="title">Unsere Position</h2>
+      <h2 class="title">Standort des Projekts</h2>
       <agm-map [latitude]="location?.lat" [longitude]="location?.lng">
         <agm-marker [latitude]="location?.lat" [longitude]="location?.lng"></agm-marker>
       </agm-map>

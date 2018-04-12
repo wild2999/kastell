@@ -5,12 +5,12 @@ import { LayoutsComponent } from '../layouts/layouts/layouts.component';
 const routes: Routes = [
   { path: '', component: LayoutsComponent, children:
     [
-      {path: '', redirectTo: 'home', pathMatch: 'full'},
-      {path: 'home', loadChildren: '../modules/home/home.module#HomeModule'},
-      {path: 'about', loadChildren: '../modules/about/about.module#AboutModule'},
-      {path: 'projects', loadChildren: '../modules/projects/projects.module#ProjectsModule'},
-      {path: 'project/:id', loadChildren: '../modules/project/project.module#ProjectModule'},
-      {path: 'contacts', loadChildren: '../modules/contacts/contacts.module#ContactsModule'}
+      {path: '', redirectTo: 'zuhause', pathMatch: 'full'},
+      {path: 'zuhause', loadChildren: '../modules/home/home.module#HomeModule'},
+      {path: 'über', loadChildren: '../modules/about/about.module#AboutModule'},
+      {path: 'projekte', loadChildren: '../modules/projects/projects.module#ProjectsModule'},
+      {path: 'projekt/:id', loadChildren: '../modules/project/project.module#ProjectModule'},
+      {path: 'kontakte', loadChildren: '../modules/contacts/contacts.module#ContactsModule'}
     ]
   },
 ];

@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer class="footer" [ngClass]="class">
   <nav>
     <ul>
       <li *ngFor="let item of menu"><a href="" [routerLink]="[item.path]">{{item.label}}</a></li>

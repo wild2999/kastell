@@ -3,16 +3,10 @@
 
 .footer {
 
-  position: relative;
-  width: 100%;
+  position: absolute;
   background: rgba(223, 223, 223, .8);
-  z-index: 9;
-  height: 100%;
-  margin-top: -115px;
-  @include tablet {
-
-    margin-top: -48px;
-  }
+  width: 100%;
+  height: auto;
 }
 
 nav {

@@ -15,7 +15,7 @@
                 <button [mat-menu-trigger-for]="matMenu" fxHide="false" fxHide.gt-sm>
                     <mat-icon>menu</mat-icon>
                 </button>
-                <mat-menu #matMenu="matMenu">
+                <mat-menu #matMenu="matMenu" hasBackdrop="false">
                     <button mat-menu-item *ngFor="let item of menu" [routerLink]="[item.path]">{{item.label}}</button>
                 </mat-menu>
             </div>
