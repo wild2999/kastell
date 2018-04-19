@@ -16,16 +16,13 @@
         [longitude]="location?.lng"
         [zoom]="8"
         [fullscreenControl]="true"
-        [usePanning]="true"
         [mapTypeControl]="true"
       >
-        <agm-kml-layer>
-          <agm-marker [latitude]="location?.lat" [longitude]="location?.lng">
-            <agm-info-window>
-              <p>{{location?.address}}</p>
-            </agm-info-window>
-          </agm-marker>
-        </agm-kml-layer>
+        <agm-marker [latitude]="location?.lat" [longitude]="location?.lng">
+          <agm-info-window>
+            <p>{{location?.address}}</p>
+          </agm-info-window>
+        </agm-marker>
       </agm-map>
     </div>
   </div>

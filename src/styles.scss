@@ -18,7 +18,11 @@ body {
 
 .wrapper {
 
-  min-height: 100vh;
+  min-height: calc(100vh - 115px);
+  @include tablet {
+
+    min-height: calc(100vh - 48px);
+  }
 }
 
 h2.title {
