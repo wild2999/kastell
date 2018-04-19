@@ -11,8 +11,21 @@
     </div>
     <div class="google-map">
       <h2 class="title">Standort des Projekts</h2>
-      <agm-map [latitude]="location?.lat" [longitude]="location?.lng">
-        <agm-marker [latitude]="location?.lat" [longitude]="location?.lng"></agm-marker>
+      <agm-map
+        [latitude]="location?.lat"
+        [longitude]="location?.lng"
+        [zoom]="8"
+        [fullscreenControl]="true"
+        [usePanning]="true"
+        [mapTypeControl]="true"
+      >
+        <agm-kml-layer>
+          <agm-marker [latitude]="location?.lat" [longitude]="location?.lng">
+            <agm-info-window>
+              <p>{{location?.address}}</p>
+            </agm-info-window>
+          </agm-marker>
+        </agm-kml-layer>
       </agm-map>
     </div>
   </div>
