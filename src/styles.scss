@@ -4,6 +4,11 @@
 @import "./app/sass/varialbes";
 @import "./app/sass/mixins";
 
+html, body {
+
+  min-height: 100vh;
+}
+
 body {
 
   font-family: AvenirNext-UltraLight, sans-serif;
@@ -18,11 +23,7 @@ body {
 
 .wrapper {
 
-  min-height: calc(100vh - 115px);
-  @include tablet {
-
-    min-height: calc(100vh - 48px);
-  }
+  min-height: 100vh;
 }
 
 h2.title {
