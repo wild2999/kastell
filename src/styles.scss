@@ -90,10 +90,10 @@ mat-spinner {
     background: rgba(223, 223, 223, .8);
     z-index: 9;
     height: 100%;
-    margin-top: -115px;
+    margin-top: -48px;
     @include tablet {
 
-      margin-top: -48px;
+      margin-top: -80px;
     }
   }
 }

@@ -10,7 +10,7 @@ export class LayoutsComponent implements OnInit {
   public menu: any = [
     {label: 'Zuhause', path: '/'},
     {label: 'Projekte', path: '/projekte'},
-    {label: 'Über', path: '/über'},
+    {label: 'Über uns', path: '/über'},
     {label: 'Kontakte', path: '/kontakte'},
   ];
 

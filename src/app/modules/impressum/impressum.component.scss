@@ -1,0 +1,23 @@
+@import "../../sass/mixins";
+@import "../../sass/varialbes";
+
+.impressum {
+
+  padding: 12rem 0;
+  @include tablet {
+
+    padding: 7rem 0;
+  }
+  & > div {
+
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.5em;
+    padding: 0 1rem;
+    @include tablet {
+
+      font-size: 1.2em;
+    }
+  }
+}
+

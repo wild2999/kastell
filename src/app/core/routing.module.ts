@@ -10,7 +10,8 @@ const routes: Routes = [
       {path: 'über', loadChildren: '../modules/about/about.module#AboutModule'},
       {path: 'projekte', loadChildren: '../modules/projects/projects.module#ProjectsModule'},
       {path: 'projekt/:id', loadChildren: '../modules/project/project.module#ProjectModule'},
-      {path: 'kontakte', loadChildren: '../modules/contacts/contacts.module#ContactsModule'}
+      {path: 'kontakte', loadChildren: '../modules/contacts/contacts.module#ContactsModule'},
+      {path: 'impressum', loadChildren: '../modules/impressum/impressum.module#ImpressumModule'},
     ]
   },
 ];
