@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class LayoutsComponent implements OnInit {
 
   public menu: any = [
-    {label: 'Zuhause', path: '/'},
+    {label: 'Home', path: '/'},
     {label: 'Projekte', path: '/projekte'},
     {label: 'Über uns', path: '/über'},
     {label: 'Kontakte', path: '/kontakte'},
