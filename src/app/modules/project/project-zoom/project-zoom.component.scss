@@ -1,0 +1,30 @@
+@import "../../../sass/varialbes";
+
+.project__slide {
+
+  height: 64vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+button {
+
+  display: block;
+  position: absolute;
+  top: 50%;
+  color: $white;
+  background: transparent;
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+  outline: none;
+  &.leftRs {
+
+    left: 30px;
+  }
+  &.rightRs {
+
+    right: 30px;
+  }
+}

@@ -1,9 +1,12 @@
 @import "../../sass/mixins";
 @import "../../sass/varialbes";
+$landscapeHeight: calc(100vh - 121px);
+$height: calc(80vh - 121px);
+$mobHeight: calc(50vh - 121px);
 
 .project {
 
-  padding: 12rem 0;
+  padding: 12rem 0 0;
   @include tablet {
 
     padding: 7rem 5px;
@@ -11,21 +14,49 @@
   }
   &__slider {
 
+    height: $height;
     width: 100%;
-    max-width: 800px;
-    margin: 0 auto 4rem;
-    img {
+    max-width: 1920px;
+    margin: -4.3rem auto 4rem;
+    position: relative;
+    @include tablet {
 
+      height: $mobHeight;
+      margin: -1rem auto 4rem;
+    }
+    @media (max-height: 375px) and (orientation: landscape) {
+      height: $landscapeHeight;
+    }
+    h3 {
+
+      text-align: right;
+      position: absolute;
+      z-index: 1;
+      background: rgba(0,0,0, 0.5);
+      color: #fff;
+      left: 0;
+      bottom: 4rem;
+      padding: 2rem;
       width: 100%;
-      //height: 535px;
-      //@include tablet {
-      //
-      //  height: 400px;
-      //}
-      //@include mobile {
-      //
-      //  height: 230px;
-      //}
+      max-width: 450px;
+      border-radius: 0 0 40px 0;
+      @include tablet {
+
+        text-align: center;
+        max-width: 100%;
+        bottom: 0;
+        padding: 1rem;
+        border-radius: 0;
+        box-sizing: border-box;
+      }
+      @media (max-height: 375px) and (orientation: landscape) {
+        text-align: center;
+        max-width: 100%;
+        bottom: 0;
+        padding: 1rem;
+        border-radius: 0;
+        box-sizing: border-box;
+      }
     }
     button {
 
@@ -48,11 +79,101 @@
       }
     }
   }
+  &__slide {
+
+    width: 100%;
+    height: $height;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    position: relative;
+    @include tablet {
+
+      height: $mobHeight;
+    }
+    @media (max-height: 375px) and (orientation: landscape) {
+      height: $landscapeHeight;
+    }
+    &:hover {
+
+      .project__slide-layout {
+
+        opacity: 1;
+      }
+    }
+    &-layout {
+
+      background: rgba(255,255,255,0.5);
+      height: 100%;
+      color: $black;
+      opacity: 0;
+      transition: opacity .5s ease-in-out;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include tablet {
+
+        display: none;
+      }
+      mat-icon {
+
+        width: 100px;
+        height: 100px;
+        font-size: 6em;
+      }
+    }
+  }
   &__description {
 
-    &-title {
+    & > div {
 
-      padding-top: 2rem;
+      margin-bottom: 5rem;
+      padding: 0 1rem;
+      & > ul {
+
+        display: flex;
+        flex-wrap: wrap;
+        & > li {
+
+          flex: 1 1 30%;
+          margin: 1rem;
+          border: 1px solid #eee;
+          & > a {
+
+            display: inline-block;
+            width: 100%;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            &:hover {
+              & > .project__slide-layout {
+
+                opacity: 1;
+              }
+              & > img {
+
+                transform: scale(1.1);
+              }
+            }
+            & > img {
+
+              width: inherit;
+              transition: transform .5s ease-in-out;
+            }
+            & > .project__slide-layout {
+
+              position: absolute;
+              top: 0;
+              right: 0;
+              left: 0;
+              bottom: 0;
+              margin: auto;
+            }
+          }
+        }
+      }
     }
   }
 }

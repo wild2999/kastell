@@ -1,0 +1,12 @@
+<div mat-dialog-content>
+  <ngu-carousel
+    [inputs]="carouselOne"
+    (initData)="initDataFn($event)"
+  >
+    <ngu-item NguCarouselItem *ngFor="let image of images">
+      <div class="project__slide" [ngStyle]="{'background-image': 'url(' + image + ')'}"></div>
+    </ngu-item>
+    <button NguCarouselPrev class='leftRs'><i class="fas fa-angle-double-left"></i></button>
+    <button NguCarouselNext class='rightRs'><i class="fas fa-angle-double-right"></i></button>
+  </ngu-carousel>
+</div>

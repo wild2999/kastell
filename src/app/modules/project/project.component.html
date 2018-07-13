@@ -1,24 +1,42 @@
-<div class="project container">
+<div class="project">
    <div *ngIf="!isProgress">
      <div class="project__slider">
        <h3>{{project.title}}</h3>
        <ngx-carousel
          [inputs]="carouselOne"
        >
-         <ngx-item NgxCarouselItem *ngFor="let slide of project.images">
-           <img [src]="slide" alt="">
+         <ngx-item NgxCarouselItem *ngFor="let slide of project.images; let i = index;" (click)="zoomSlider(i)">
+           <div class="project__slide" [ngStyle]="{'background-image': 'url(' + slide + ')'}">
+             <div class="project__slide-layout">
+               <mat-icon>search</mat-icon>
+             </div>
+           </div>
          </ngx-item>
          <button NgxCarouselPrev class='leftRs'><i class="fas fa-angle-double-left"></i></button>
          <button NgxCarouselNext class='rightRs'><i class="fas fa-angle-double-right"></i></button>
        </ngx-carousel>
      </div>
-     <div class="project__description">
-       <h3>{{project.description[0].title}}</h3>
-       <p>{{project.description[0].text}}</p>
-       <h3 class="project__description-title">{{project.description[0].listsTitle}}</h3>
-       <ul class="list-of-text">
-         <li *ngFor="let item of project.description[0].listOfDetails"><span>{{item.property}}:</span> {{item.value}}</li>
-       </ul>
+     <div class="project__description container">
+       <div>
+         <h3>{{project.description[0].title}}</h3>
+         <p [innerHTML]="project.description[0].text"></p>
+       </div>
+       <div>
+         <ul>
+           <li *ngFor="let plan of project.plans">
+             <a (click)="zoomPlan(plan)">
+               <img [src]="plan" alt="">
+               <div class="project__slide-layout">
+                 <mat-icon>search</mat-icon>
+               </div>
+             </a>
+           </li>
+         </ul>
+
+       </div>
+       <div>
+         <p [innerHTML]="project.description[0].text2"></p>
+       </div>
      </div>
    </div>
   <mat-spinner *ngIf="isProgress"></mat-spinner>

@@ -4,6 +4,9 @@ import { Project } from "../../shared/models/project";
 import { HttpClient } from "@angular/common/http";
 import { ProjectService } from "../../shared/services/project.service";
 import { ActivatedRoute } from "@angular/router";
+import { ProjectZoomComponent } from "./project-zoom/project-zoom.component";
+import { MatDialog } from "@angular/material";
+import { ProjectPlanComponent } from "./project-plan/project-plan.component";
 
 @Component({
   selector: 'app-project',
@@ -15,11 +18,13 @@ export class ProjectComponent implements OnInit {
   public carouselOne: NgxCarousel;
   public project: Project[];
   public isProgress = true;
+  private TABLET_WIDTH = 768;
 
   constructor(
     private _route: ActivatedRoute,
     private http: HttpClient,
-    private projectService: ProjectService
+    private projectService: ProjectService,
+    private dialog: MatDialog,
   ) { }
 
   ngOnInit() {
@@ -34,16 +39,31 @@ export class ProjectComponent implements OnInit {
       grid: {xs: 1, sm: 1, md: 1, lg: 1, all: 0},
       slide: 1,
       speed: 1000,
-      interval: 4000,
       point: {
         visible: false
       },
-      load: 2,
+      load: 1,
       touch: true,
       loop: true,
       custom: 'banner',
-      easing: 'ease-in-out',
+      easing: 'ease-in-out'
     }
+  }
+
+  zoomSlider(index) {
+    if (window.innerWidth <= this.TABLET_WIDTH) return;
+    this.dialog.open(ProjectZoomComponent, {
+      width: '55vw',
+      height: '70vh',
+      data: { images: this.project['images'], index }
+    });
+  }
+
+  zoomPlan(image) {
+    this.dialog.open(ProjectPlanComponent, {
+      width: '80vw',
+      data: { image }
+    });
   }
 
 }
