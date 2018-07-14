@@ -18,6 +18,7 @@ export class ProjectComponent implements OnInit {
   public carouselOne: NgxCarousel;
   public project: Project[];
   public isProgress = true;
+  public config = {};
   private TABLET_WIDTH = 768;
 
   constructor(
@@ -51,12 +52,21 @@ export class ProjectComponent implements OnInit {
   }
 
   zoomSlider(index) {
-    if (window.innerWidth <= this.TABLET_WIDTH) return;
-    this.dialog.open(ProjectZoomComponent, {
-      width: '55vw',
-      height: '70vh',
-      data: { images: this.project['images'], index }
-    });
+    if (window.innerWidth <= this.TABLET_WIDTH - 1) return;
+    if (window.innerWidth <= this.TABLET_WIDTH) {
+      this.config = {
+        width: '100vw',
+        height: '70vh',
+        data: { images: this.project['images'], index }
+      }
+    } else {
+      this.config = {
+        width: '55vw',
+        height: '70vh',
+        data: { images: this.project['images'], index }
+      };
+    }
+    this.dialog.open(ProjectZoomComponent, this.config);
   }
 
   zoomPlan(image) {

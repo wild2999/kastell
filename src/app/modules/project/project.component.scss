@@ -113,7 +113,7 @@ $mobHeight: calc(50vh - 121px);
       display: flex;
       align-items: center;
       justify-content: center;
-      @include tablet {
+      @include less-then-tablet {
 
         display: none;
       }

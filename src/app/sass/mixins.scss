@@ -12,6 +12,12 @@
   }
 }
 
+@mixin less-then-tablet {
+  @media (max-width: #{$less-the-tablet}) {
+    @content;
+  }
+}
+
 @mixin link {
 
   text-decoration: none;
