@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
-import { Slide } from "../models/slide";
+import { Slide } from '../models/slide';
 
 @Injectable()
 export class SlideService {
 
-  private url: string = "/api/v1/slides";
+  private url = '/api/v1/slides';
   constructor(
     private http: HttpClient
   ) { }

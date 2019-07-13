@@ -137,9 +137,15 @@ $mobHeight: calc(50vh - 121px);
         flex-wrap: wrap;
         & > li {
 
-          flex: 1 1 30%;
-          margin: 1rem;
-          border: 1px solid #eee;
+          width: calc(100% / 3);
+          @include tablet {
+
+            width: calc(100% / 2);
+          }
+          @include mobile {
+
+            width: 100%;
+          }
           & > a {
 
             display: inline-block;
@@ -147,6 +153,10 @@ $mobHeight: calc(50vh - 121px);
             cursor: pointer;
             position: relative;
             overflow: hidden;
+            height: 200px;
+            padding: 0 1px;
+            box-sizing: border-box;
+            border: 1px solid #eee;
             &:hover {
               & > .project__slide-layout {
 
@@ -161,6 +171,7 @@ $mobHeight: calc(50vh - 121px);
 
               width: inherit;
               transition: transform .5s ease-in-out;
+              height: inherit;
             }
             & > .project__slide-layout {
 

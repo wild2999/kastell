@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxCarousel } from 'ngx-carousel';
-import { SlideService } from "../../shared/services/slide.service";
-import { Slide } from "../../shared/models/slide";
+import { SlideService } from '../../shared/services/slide.service';
+import { Slide } from '../../shared/models/slide';
 
 @Component({
   selector: 'app-home',
@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
       loop: true,
       custom: 'banner',
       easing: 'ease-in-out',
-    }
+    };
   }
 
 }

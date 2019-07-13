@@ -1,6 +1,6 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material";
-import { NguCarouselStore, NguCarouselService } from '@ngu/carousel';
+import { Component, OnInit, Inject, ViewChild } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material';
+import { NguCarousel, NguCarouselConfig } from '@ngu/carousel';
 
 @Component({
   selector: 'app-project-zoom',
@@ -9,17 +9,14 @@ import { NguCarouselStore, NguCarouselService } from '@ngu/carousel';
 })
 export class ProjectZoomComponent implements OnInit {
 
-  carouselOne;
-  carouselToken;
+  carouselOne: NguCarouselConfig;
   images;
-  index;
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private carousel: NguCarouselService
+    @ViewChild('carousel') carousel: NguCarousel<any>
   ) {
     this.images = data.images;
-    this.index = data.index;
   }
 
   ngOnInit() {
@@ -36,16 +33,7 @@ export class ProjectZoomComponent implements OnInit {
       loop: true,
       custom: 'banner',
       easing: 'ease-in-out'
-    }
-  }
-
-  initDataFn(key: NguCarouselStore) {
-    this.carouselToken = key.token;
-    setTimeout(() => this.moveToChosen());
-  }
-
-  moveToChosen() {
-    this.carousel.moveToSlide(this.carouselToken, this.index, false);
+    };
   }
 
 }
