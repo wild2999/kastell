@@ -1,6 +1,6 @@
-import { Component, OnInit, Inject, ViewChild } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material';
-import { NguCarousel, NguCarouselConfig } from '@ngu/carousel';
+import { NgxCarousel } from 'ngx-carousel';
 
 @Component({
   selector: 'app-project-zoom',
@@ -9,12 +9,11 @@ import { NguCarousel, NguCarouselConfig } from '@ngu/carousel';
 })
 export class ProjectZoomComponent implements OnInit {
 
-  carouselOne: NguCarouselConfig;
+  carouselOne: NgxCarousel;
   images;
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
-    @ViewChild('carousel') carousel: NguCarousel<any>
   ) {
     this.images = data.images;
   }

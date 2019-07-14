@@ -4,15 +4,13 @@
   </button>
 </div>
 <div mat-dialog-content>
-  <ngu-carousel
-    #carousel
+  <ngx-carousel
     [inputs]="carouselOne"
-    [dataSource]="images"
   >
-    <div *nguCarouselDef="let image">
+    <ngx-item NgxCarouselItem *ngFor="let image of images">
       <div class="project__slide" [ngStyle]="{'background-image': 'url(' + image + ')'}"></div>
-    </div>
-    <button NguCarouselPrev class='leftRs'><i class="fas fa-angle-double-left"></i></button>
-    <button NguCarouselNext class='rightRs'><i class="fas fa-angle-double-right"></i></button>
-  </ngu-carousel>
+    </ngx-item>
+    <button NgxCarouselPrev class='leftRs'><i class="fas fa-angle-double-left"></i></button>
+    <button NgxCarouselNext class='rightRs'><i class="fas fa-angle-double-right"></i></button>
+  </ngx-carousel>
 </div>
