@@ -9,7 +9,8 @@ const {
   locations: { getLocation },
   slides: { getSlides },
   projects: { getProjects, getProjectById },
-  abouts: { getAbout }
+  abouts: { getAbout },
+  contacts: { sendLetter }
 } = require('./server/controllers');
 
 const app = express();
@@ -24,6 +25,8 @@ app.get('/api/v1/location', getLocation);
 app.get('/api/v1/projects', getProjects);
 app.get('/api/v1/project', getProjectById);
 app.get('/api/v1/about', getAbout);
+
+app.post('/api/v1/contact', sendLetter);
 
 app.get('*', (req, res) => res.sendFile(path.resolve('./dist/index.html')));
 
